@@ -1,0 +1,46 @@
+//- Usage
+  +button({
+    href: 'http://www.exemple.com',
+    text: 'click',
+    textColor: '#FFFFFF',
+    buttonColor: '#0a2c74'
+  })
+  +buttonEx({
+    href: 'http://www.exemple.com',
+    text: 'click',
+    textColor: '#FFFFFF',
+    buttonColor: '#0a2c74'
+  })
+mixin button(options)
+  - var text = options.text
+  - var href = options.href || '#'
+  - var textColor = options.textColor
+  - var buttonColor = options.buttonColor
+  mj-raw
+    td
+      table(width="100%" style="max-width:100%")
+        tr
+          td
+            table(border="0" align="center" cellpadding="0" cellspacing="0" style="margin:0 auto;margin-bottom:20px;margin-top:20px")
+              tr
+                td(align="center")
+                  table(border="0" cellpadding="0" cellspacing="0" style="margin:0 auto;")
+                    tr
+                      td(align="center" bgcolor=buttonColor style="min-width:180px; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; font-family: 'Neutraface-Demi', Arial, 'Helvetica Neue', Helvetica, sans-serif;")
+                        a(class="msoAltFont" href=href style=`padding: 9px 12px; mso-padding-alt: 9px 12px; min-width:180px; display: block;text-decoration: none;border:0; text-align: center; text-transform:uppercase; font-weight: 600;font-size: 16px; color: ${textColor}; background: ${buttonColor}; border: 1px solid ${buttonColor};-moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; mso-line-height-rule: exactly; line-height:18px;`) #{text}
+
+
+
+mixin buttonEx(options)
+  - var text = options.text
+  - var href = options.href || '#'
+  - var textColor = options.textColor
+  - var buttonColor = options.buttonColor
+  mj-raw
+    td(align="center")
+      table(border="0" align="center" cellpadding="0" cellspacing="0" style="margin:0 auto;margin-left: 5px;margin-right:5px;margin-bottom:20px;margin-top:20px")
+        tr
+          td(align="center" bgcolor=buttonColor style=`min-width:80px; padding-left:5px; padding-right: 5px; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; font-family: 'Neutraface-Demi', Arial, 'Helvetica Neue', Helvetica, sans-serif;`)
+            a(class="msoAltFont" href=href style=`word-break:break-word; padding: 9px 12px; mso-padding-alt: 9px 12px; min-width:80px; display: block;text-decoration: none;border:0; text-align: center; text-transform:uppercase; font-weight: 600;font-size: 16px; color: ${textColor}; background: ${buttonColor}; border: 1px solid ${buttonColor}#0a2c74;-moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; mso-line-height-rule: exactly; line-height:18px;`) #{text}
+
+

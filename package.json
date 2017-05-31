@@ -1,0 +1,44 @@
+{
+  "name": "emailing-starter-kit",
+  "version": "1.0.0",
+  "description": "Emailing starter kit",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://git.proximity.fr/mmarotsa/emailing-starter-kit.git"
+  },
+  "keywords": [
+    "pug",
+    "mjml",
+    "emailing"
+  ],
+  "author": "Mirza Andriamanamisoa Marotsaha <marotsaham@proximity.bbdo.fr>",
+  "license": "GPL-3.0",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-register": "^6.24.1",
+    "babelify": "^7.3.0",
+    "gulp": "github:gulpjs/gulp#4.0",
+    "gulp-babel": "^6.1.2",
+    "gulp-changed": "^3.1.0",
+    "gulp-data": "^1.2.1",
+    "gulp-js-xlsx": "^0.1.0",
+    "gulp-mail": "^0.2.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-pug": "^3.3.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "mjml": "^3.3.2",
+    "mjml-cli": "^3.3.2",
+    "nodemailer": "^4.0.1",
+    "pug": "^2.0.0-rc.1",
+    "through2": "^2.0.3",
+    "xlsx": "^0.9.13",
+    "yargs": "^8.0.1"
+  }
+}
