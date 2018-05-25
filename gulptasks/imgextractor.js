@@ -51,8 +51,8 @@ export class ImgExtractor extends MainGulptask {
                 .pipe(gulp.dest(idest));
               }
             catch(e) {
-              console.log(e);
-              this.emit('end');
+              console.log('Empty images');
+              //this.emit('end');
             }
             finally {
               this.push(output);
