@@ -21,8 +21,8 @@ export default {
       '!./app/pages/_*/**/*.pug',
       '!./app/pages/**/**/_*/*.pug'
     ],
-    DEST: './build/',
-    DATA: './db/json/' + (argv.lang || arg.l) + '/translation-' + (argv.lang || arg.l) + '.json'
+    DEST: `./build/${argv.lang || argv.l}/`,
+    DATA: './db/json/' + (argv.lang || argv.l) + '/translation-' + (argv.lang || argv.l) + '.json'
   },
   image: {
     imgSRC: './app/images',
