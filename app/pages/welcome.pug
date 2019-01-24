@@ -3,36 +3,35 @@ mjml
   mj-head
     block head
   mj-body
-    mj-container
-      block header
-        mj-text header
-      mj-wrapper(
-        padding-top="0px",
-        padding-left="20px",
-        padding-right="20px",
-        background-color="#F8F8F8"
-      )  
-        block banner
-          mj-section
-            mj-column
-              mj-text!= translation['welcome - banner - text']
-        block main
-          mj-section
-            mj-column
-              mj-text main "./images/user.png"
-              +button({
-                href: 'http://www.exemple.com',
-                text: 'click',
-                textColor: '#FFFFFF',
-                buttonColor: '#EE2c74'
-              })
-              +buttonEx({
-                href: 'http://www.exemple.com',
-                text: 'click',
-                textColor: '#FFFFFF',
-                buttonColor: '#EE2c74'
-              })
-      block footer
+    block header
+      mj-text header
+    mj-wrapper(
+      padding-top="0px",
+      padding-left="20px",
+      padding-right="20px",
+      background-color="#F8F8F8"
+    )  
+      block banner
         mj-section
           mj-column
-            mj-text!= translation['welcome - footer - text']
+            mj-text!= translation['welcome - banner - text']
+      block main
+        mj-section
+          mj-column
+            mj-text main "./images/user.png"
+            +button({
+              href: 'http://www.exemple.com',
+              text: 'click',
+              textColor: '#FFFFFF',
+              buttonColor: '#EE2c74'
+            })
+            +buttonEx({
+              href: 'http://www.exemple.com',
+              text: 'click',
+              textColor: '#FFFFFF',
+              buttonColor: '#EE2c74'
+            })
+    block footer
+      mj-section
+        mj-column
+          mj-text!= translation['welcome - footer - text']

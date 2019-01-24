@@ -5,8 +5,8 @@ import rename from 'gulp-rename';
 import through from 'through2';
 import gutil from 'gulp-util';
 import data from 'gulp-data';
-//import mjmlEngine from 'mjml';
-var mjmlEngine = require ('mjml')
+import mjmlEngine from 'mjml';
+// var mjmlEngine = require ('mjml')
 import { MainGulptask } from '../MainGulptask';
 
 export class PugMJML extends MainGulptask{
@@ -40,7 +40,7 @@ export class PugMJML extends MainGulptask{
             var render
 
             try {
-              render = mjmlEngine.mjml2html(file.contents.toString())
+              render = mjmlEngine(file.contents.toString());
             } catch (e) {
               this.emit('error', new GulpError("mjml", e))
               return callback()
