@@ -41,7 +41,7 @@ export class SendMail extends MainGulptask {
   set smtpInfo(info) {
     this._smtpInfo = info;
   }
-  task(done) {
+  run(done) {
     const smtpInfo = this.smtpInfo;
     const source = `./build/${this.template}/index.html`;
     // TODO: get URL of images from image hosting

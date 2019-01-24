@@ -20,7 +20,7 @@ export class ImgExtractor extends MainGulptask {
   set imageSRC(newImgSRC) {
     this._imageSRC = newImgSRC;
   }
-  task(done) {
+  run(done) {
     const regEx = this._regex;
     const imagesBasePath = this._imageSRC;
     const imgDest = this.dest;
@@ -37,7 +37,7 @@ export class ImgExtractor extends MainGulptask {
           if (file.isBuffer()) {
             var output = file.clone();
             let imgList = file.contents.toString().match(regEx);
-            try {
+            if (imgList && imgList.length) {
               imgList = imgList.map((e) => {
                 return e.replace('./images/', '' );
               });
@@ -49,14 +49,8 @@ export class ImgExtractor extends MainGulptask {
               gulp.src(imgList, {base: imagesBasePath, cwd: imagesBasePath })
                 .pipe(changed(idest))
                 .pipe(gulp.dest(idest));
-              }
-            catch(e) {
-              console.log('Empty images');
-              //this.emit('end');
             }
-            finally {
-              this.push(output);
-            }
+            this.push(output);
           }
           return callback()
         }))

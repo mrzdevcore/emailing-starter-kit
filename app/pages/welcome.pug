@@ -18,7 +18,8 @@ mjml
       block main
         mj-section
           mj-column
-            mj-text main "./images/user.png"
+            mj-text
+            mj-image(width="300px" src="./images/user.png")
             +button({
               href: 'http://www.exemple.com',
               text: 'click',

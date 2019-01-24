@@ -35,7 +35,7 @@ export class MainGulptask {
   /**
    * Override in subclass
    */
-  task(callback) {
+  run(callback) {
     callback();
   }
 };

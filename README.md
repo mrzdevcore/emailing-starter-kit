@@ -22,7 +22,7 @@
 
 ### System Requirements
 
-- MJML > v3.3.2
+- MJML > v4.3.1
 - gulp 4
 - Node.js > v8.11.2
 
@@ -47,7 +47,7 @@ $ gulp sendMail --template welcome --to me@exemple.com
 
 ## Maintainers
 
-[@mrzdevcore](https://github.com/mrzdevcore)
+[@Mirza Andriamanamisoa Marotsaha](https://github.com/mrzdevcore)
 
 ## Contribute
 

@@ -14,7 +14,7 @@ export class PugMJML extends MainGulptask{
     super(options);
     this._name = "PUGMJML";
   }
-  task(done) {
+  run(done) {
     return gulp.src(this.src)
         .pipe(plumber((error) => {
           console.log(error);
@@ -30,27 +30,27 @@ export class PugMJML extends MainGulptask{
           extname: '.mjml'
         }))
         .pipe(through.obj(function(file, enc, callback) { 
-          var GulpError = gutil.PluginError
+          var GulpError = gutil.PluginError;
           if (file.isStream()) {
-            this.emit('error', new GulpError("mjml", 'Streams are not supported!'))
-            return callback()
+            this.emit('error', new GulpError("mjml", 'Streams are not supported!'));
+            return callback();
           }
           if (file.isBuffer()) {
-            var output = file.clone()
-            var render
+            var output = file.clone();
+            var render;
 
             try {
               render = mjmlEngine(file.contents.toString());
             } catch (e) {
-              this.emit('error', new GulpError("mjml", e))
-              return callback()
+              this.emit('error', new GulpError("mjml", e));
+              return callback();
             }
 
-            output.contents = new Buffer(render.html)
-            output.path = gutil.replaceExtension(file.path.toString(), '.html')
-            this.push(output)
+            output.contents = new Buffer(render.html);
+            output.path = gutil.replaceExtension(file.path.toString(), '.html');
+            this.push(output);
           }
-          return callback()
+          return callback();
         }))
         .pipe(rename((path) => {
           path.dirname = path.basename;

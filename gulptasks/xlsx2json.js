@@ -15,7 +15,7 @@ export class Xlsx2json extends MainGulptask {
     this._name = "XSLX TO JSON";
   }
   
-  task(done) {
+  run(done) {
     return gulp.src(this.src)
       .pipe(plumber((error) => {
         console.log(error);
