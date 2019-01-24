@@ -1,11 +1,7 @@
 import gulp from 'gulp';
 import plumber from 'gulp-plumber';
-import rename from 'gulp-rename';
 import through from 'through2';
-import gutil from 'gulp-util';
-import changed from 'gulp-changed';
 import { MainGulptask } from '../MainGulptask';
-import path from 'path';
 import mail from 'gulp-mail';
 
 export class SendMail extends MainGulptask {

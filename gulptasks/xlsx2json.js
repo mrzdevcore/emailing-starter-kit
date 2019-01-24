@@ -1,11 +1,7 @@
 import gulp from 'gulp';
 import plumber from 'gulp-plumber';
-import rename from 'gulp-rename';
 import through from 'through2';
-import gutil from 'gulp-util';
-import changed from 'gulp-changed';
 import { MainGulptask } from '../MainGulptask';
-import path from 'path';
 import xlsx from 'xlsx';
 import gulpXlsx from 'gulp-js-xlsx';
 
@@ -37,7 +33,7 @@ export class Xlsx2json extends MainGulptask {
           var render = file.contents.toString();
           var textObj = JSON.parse(render);
           var dictionary = {};
-          dictionary['translation'] = {};
+          dictionary.translation = {};
           for( var key in textObj ) {
             const array = textObj[key];
             array.forEach((element) => {
